@@ -38,16 +38,28 @@ function createBoard() {
 }
 
 function createKeyboard() {
-    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    for (let letter of alphabet) {
-        const key = document.createElement("div");
-        key.classList.add("key");
-        key.textContent = letter;
-        key.setAttribute("data-letter", letter);
-        keyboard.appendChild(key);
-        letterStatus[letter] = ''; // Initialize letter status
-    }
+    const qwertyLayout = [
+        "QWERTYUIOP",
+        "ASDFGHJKL",
+        "ZXCVBNM"
+    ];
+
+    qwertyLayout.forEach((row) => {
+        const rowDiv = document.createElement("div");
+        rowDiv.classList.add("keyboard-row");
+        
+        for (let letter of row) {
+            const key = document.createElement("div");
+            key.classList.add("key");
+            key.textContent = letter;
+            key.setAttribute("data-letter", letter);
+            rowDiv.appendChild(key);
+            letterStatus[letter] = ''; // Initialize letter status
+        }
+        keyboard.appendChild(rowDiv);
+    });
 }
+
 
 function handleInput(e) {
     const cell = e.target;
