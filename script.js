@@ -185,5 +185,5 @@ function displayPlayAgainButton() {
     message.appendChild(playAgainButton);
 }
 
-// Start the game
+// Start the game  ...
 initializeGame();
