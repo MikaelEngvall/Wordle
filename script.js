@@ -159,10 +159,11 @@ function updateKeyboard() {
 function displayPlayAgainButton() {
     const playAgainButton = document.createElement("button");
     playAgainButton.textContent = "Play Again";
-    playAgainButton.classList.add("play-again");
+    playAgainButton.classList.add("play-again-button");
     playAgainButton.addEventListener("click", initializeGame);
     message.appendChild(playAgainButton);
 }
+
 
 // Start the game
 initializeGame();

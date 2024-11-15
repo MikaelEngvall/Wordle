@@ -6,6 +6,13 @@ body {
     height: 100vh;
     background-color: #f0f0f0;
 }
+#message {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    margin-top: 20px; /* Add some spacing above the message container */
+    font-size: 18px; /* Adjust font size for the message text */
+}
 
 .game-container {
     text-align: center;
@@ -123,4 +130,19 @@ body {
         justify-content: space-between;
         padding: 0 3px; /* Adjust padding for very small screens */
     }
+}
+.play-again-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.play-again-button:hover {
+    background-color: #0056b3;
 }
