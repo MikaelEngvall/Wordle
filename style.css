@@ -66,8 +66,8 @@ body {
 }
 
 .key {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border: 2px solid #ccc;
     display: flex;
     justify-content: center;
@@ -124,6 +124,10 @@ button.play-again:hover {
     button.play-again {
         font-size: 1.2em;
     }
+
+    #keyboard {
+        margin-top: 10px;
+    }
 }
 
 /* For Mobile Phones (Portrait) */
@@ -144,6 +148,12 @@ button.play-again:hover {
         font-size: 1.2em;
         padding: 12px 24px;
     }
+
+    /* Adjust keyboard layout for mobile */
+    .keyboard-row {
+        flex-wrap: wrap; /* Ensure rows wrap if needed */
+        justify-content: space-between; /* Distribute the keys better */
+    }
 }
 
 /* For Phones in Landscape mode (Small screens) */
@@ -162,5 +172,11 @@ button.play-again:hover {
 
     button.play-again {
         font-size: 1.1em;
+    }
+
+    /* Adjust keyboard layout for landscape on small screens */
+    .keyboard-row {
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
 }
