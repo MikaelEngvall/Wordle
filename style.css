@@ -86,14 +86,14 @@ body {
 /* Smaller adjustments for screens less than 481px wide */
 @media (max-width: 480px) {
     .cell {
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
         font-size: 18px; /* Smaller text */
     }
 
     .key {
-        width: 35px;
-        height: 35px;
+        width: 30px;
+        height: 30px;
         font-size: 16px; /* Smaller font */
     }
 
