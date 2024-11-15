@@ -5,14 +5,10 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
 }
 
 .game-container {
     text-align: center;
-    width: 90%; /* Add some margin to the sides */
-    max-width: 500px; /* Limit the width to avoid stretching too much on larger screens */
 }
 
 #board {
@@ -25,17 +21,15 @@ body {
 }
 
 .cell {
-    width: 12vw; /* Use viewport width for responsiveness */
-    height: 12vw; /* Keep square aspect ratio */
+    width: 50px;
+    height: 50px;
     border: 2px solid #ccc;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 4vw; /* Adjust font size based on viewport width */
+    font-size: 24px;
     margin: 2px; /* Space between cells */
     text-align: center; /* Center text in the cell */
-    min-width: 40px; /* Ensure there's a minimum size */
-    min-height: 40px; /* Ensure there's a minimum size */
 }
 
 .correct {
@@ -63,20 +57,17 @@ body {
     justify-content: center;
     gap: 5px;
     margin-bottom: 5px;
-    flex-wrap: wrap; /* Ensure the keys wrap when needed */
 }
 
 .key {
-    width: 10vw; /* Responsive width for the keys */
-    height: 10vw; /* Responsive height for the keys */
+    width: 40px;
+    height: 40px;
     border: 2px solid #ccc;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 3.5vw; /* Reduce font size for small screens */
+    font-size: 20px;
     cursor: pointer;
-    min-width: 35px; /* Set minimum width for keys */
-    min-height: 35px; /* Set minimum height for keys */
 }
 
 .key.correct {
@@ -90,55 +81,4 @@ body {
 
 .key.absent {
     background-color: gray;
-}
-
-button.play-again {
-    padding: 10px 20px;
-    font-size: 1.5em;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-top: 20px;
-    border-radius: 5px;
-}
-
-button.play-again:hover {
-    background-color: #45a049;
-}
-
-@media (max-width: 600px) {
-    .cell {
-        width: 18vw; /* Slightly bigger cells for smaller screens */
-        height: 18vw;
-        font-size: 5vw; /* Larger font for smaller devices */
-    }
-
-    .key {
-        width: 12vw;
-        height: 12vw;
-        font-size: 4vw;
-    }
-
-    button.play-again {
-        font-size: 1.2em;
-    }
-}
-
-@media (max-width: 400px) {
-    .cell {
-        width: 20vw; /* Adjust to fill smaller screens */
-        height: 20vw;
-        font-size: 6vw;
-    }
-
-    .key {
-        width: 14vw;
-        height: 14vw;
-        font-size: 5vw;
-    }
-
-    button.play-again {
-        font-size: 1.1em;
-    }
 }
