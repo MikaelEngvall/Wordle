@@ -16,6 +16,11 @@ languageFlags.forEach(flag => {
     flag.addEventListener("click", () => {
         currentLang = flag.getAttribute("data-lang");
         console.log(`Language changed to: ${currentLang}`);
+        // Remove the "active" class from all flags
+        languageFlags.forEach(f => f.classList.remove("active"));
+
+        // Add the "active" class to the clicked flag
+        flag.classList.add("active");
         initializeGame();  // Restart the game with the new language
     });
 });

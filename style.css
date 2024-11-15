@@ -195,9 +195,15 @@ body.dark-mode .key.absent {
     width: 30px;
     height: 20px;
     cursor: pointer;
-    transition: transform 0.2s;
+    margin: 0 5px;
+    transition: all 0.3s ease; /* Smooth transition for resizing */
 }
 
 .language-flag:hover {
     transform: scale(1.1);
+}
+/* Enlarged size for the clicked (active) flag */
+.language-flag.active {
+    width: 40px; /* Make the clicked flag bigger */
+    height: 30px; /* Adjust the height accordingly */
 }
