@@ -107,15 +107,15 @@ body {
 /* Even smaller adjustments for very small screens under 400px wide */
 @media (max-width: 400px) {
     .cell {
-        width: 35px;
-        height: 35px;
-        font-size: 16px; /* Even smaller text */
+        width: 30px;
+        height: 30px;
+        font-size: 12px; /* Even smaller text */
     }
 
     .key {
-        width: 30px;
-        height: 30px;
-        font-size: 14px; /* Even smaller font */
+        width: 25px;
+        height: 25px;
+        font-size: 10px; /* Even smaller font */
     }
 
     .keyboard-row {
