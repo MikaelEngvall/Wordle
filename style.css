@@ -12,8 +12,8 @@ body {
 
 .game-container {
     text-align: center;
-    width: 100%; /* Make the container take full width */
-    max-width: 500px; /* Limit the max width for larger screens */
+    width: 100%;
+    max-width: 500px;
 }
 
 #board {
@@ -21,19 +21,19 @@ body {
 }
 
 .row {
-    display: flex; /* Align cells horizontally */
-    justify-content: center; /* Center the cells */
+    display: flex;
+    justify-content: center;
 }
 
 .cell {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border: 2px solid #ccc;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 24px;
-    margin: 2px; /* Space between cells */
+    margin: 2px;
     text-align: center;
 }
 
@@ -62,7 +62,7 @@ body {
     justify-content: center;
     gap: 5px;
     margin-bottom: 5px;
-    flex-wrap: nowrap; /* Prevent wrapping of keys */
+    flex-wrap: nowrap;
 }
 
 .key {
@@ -110,15 +110,15 @@ button.play-again:hover {
 /* For Tablets (Portrait and Landscape) */
 @media (max-width: 768px) {
     .cell {
-        width: 50px;
-        height: 50px;
-        font-size: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
     }
 
     .key {
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
     }
 
     button.play-again {
@@ -133,15 +133,15 @@ button.play-again:hover {
 /* For Mobile Phones (Portrait) */
 @media (max-width: 480px) {
     .cell {
-        width: 15vw; /* Use viewport width for responsiveness */
-        height: 15vw;
-        font-size: 6vw; /* Larger text for mobile */
+        width: 12vw; /* Adjusting the cell size for smaller screens */
+        height: 12vw;
+        font-size: 5vw; /* Larger text for better readability on small screens */
     }
 
     .key {
-        width: 12vw;
-        height: 12vw;
-        font-size: 5vw;
+        width: 8vw; /* Making the keys smaller */
+        height: 8vw;
+        font-size: 4vw; /* Adjusting font size to fit on the keys */
     }
 
     button.play-again {
@@ -151,22 +151,22 @@ button.play-again:hover {
 
     /* Adjust keyboard layout for mobile */
     .keyboard-row {
-        flex-wrap: wrap; /* Ensure rows wrap if needed */
-        justify-content: space-between; /* Distribute the keys better */
+        flex-wrap: wrap; /* Allow the keyboard rows to wrap when necessary */
+        justify-content: space-between;
     }
 }
 
 /* For Phones in Landscape mode (Small screens) */
 @media (max-width: 600px) and (orientation: landscape) {
     .cell {
-        width: 20vw;
-        height: 20vw;
-        font-size: 5vw;
+        width: 15vw; /* Use a relative width */
+        height: 15vw;
+        font-size: 5vw; /* Adjust font size to be readable */
     }
 
     .key {
-        width: 12vw;
-        height: 12vw;
+        width: 10vw;
+        height: 10vw;
         font-size: 4.5vw;
     }
 
