@@ -1,4 +1,3 @@
-/* Global Styles */
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -6,23 +5,19 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
 }
 
 .game-container {
     text-align: center;
-    width: 100%;
-    max-width: 500px;
 }
 
 #board {
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Space between the board and message */
 }
 
 .row {
-    display: flex;
-    justify-content: center;
+    display: flex; /* Align cells horizontally */
+    justify-content: center; /* Center the cells */
 }
 
 .cell {
@@ -33,8 +28,8 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 24px;
-    margin: 2px;
-    text-align: center;
+    margin: 2px; /* Space between cells */
+    text-align: center; /* Center text in the cell */
 }
 
 .correct {
@@ -62,7 +57,6 @@ body {
     justify-content: center;
     gap: 5px;
     margin-bottom: 5px;
-    flex-wrap: nowrap;
 }
 
 .key {
@@ -72,9 +66,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 18px;
+    font-size: 20px;
     cursor: pointer;
-    margin: 2px;
 }
 
 .key.correct {
@@ -90,93 +83,44 @@ body {
     background-color: gray;
 }
 
-button.play-again {
-    padding: 10px 20px;
-    font-size: 1.5em;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-top: 20px;
-    border-radius: 5px;
-}
-
-button.play-again:hover {
-    background-color: #45a049;
-}
-
-/* Responsive Styles */
-
-/* For Tablets (Portrait and Landscape) */
-@media (max-width: 768px) {
+/* Smaller adjustments for screens less than 481px wide */
+@media (max-width: 480px) {
     .cell {
-        width: 45px;
-        height: 45px;
-        font-size: 18px;
+        width: 40px;
+        height: 40px;
+        font-size: 18px; /* Smaller text */
     }
 
     .key {
         width: 35px;
         height: 35px;
-        font-size: 14px;
+        font-size: 16px; /* Smaller font */
     }
 
-    button.play-again {
-        font-size: 1.2em;
-    }
-
-    #keyboard {
-        margin-top: 10px;
+    .keyboard-row {
+        flex-wrap: wrap; /* Allow the rows to wrap */
+        justify-content: space-between; /* Space out the keys */
+        padding: 0 5px; /* Add some padding to avoid too much overlap */
     }
 }
 
-/* For Mobile Phones (Portrait) */
-@media (max-width: 480px) {
+/* Even smaller adjustments for very small screens under 400px wide */
+@media (max-width: 400px) {
     .cell {
-        width: 12vw; /* Adjusting the cell size for smaller screens */
-        height: 12vw;
-        font-size: 5vw; /* Larger text for better readability on small screens */
+        width: 35px;
+        height: 35px;
+        font-size: 16px; /* Even smaller text */
     }
 
     .key {
-        width: 8vw; /* Making the keys smaller */
-        height: 8vw;
-        font-size: 4vw; /* Adjusting font size to fit on the keys */
+        width: 30px;
+        height: 30px;
+        font-size: 14px; /* Even smaller font */
     }
 
-    button.play-again {
-        font-size: 1.2em;
-        padding: 12px 24px;
-    }
-
-    /* Adjust keyboard layout for mobile */
     .keyboard-row {
-        flex-wrap: wrap; /* Allow the keyboard rows to wrap when necessary */
+        flex-wrap: wrap; /* Ensure wrapping */
         justify-content: space-between;
-    }
-}
-
-/* For Phones in Landscape mode (Small screens) */
-@media (max-width: 600px) and (orientation: landscape) {
-    .cell {
-        width: 15vw; /* Use a relative width */
-        height: 15vw;
-        font-size: 5vw; /* Adjust font size to be readable */
-    }
-
-    .key {
-        width: 10vw;
-        height: 10vw;
-        font-size: 4.5vw;
-    }
-
-    button.play-again {
-        font-size: 1.1em;
-    }
-
-    /* Adjust keyboard layout for landscape on small screens */
-    .keyboard-row {
-        flex-wrap: wrap;
-        justify-content: space-between;
+        padding: 0 3px; /* Adjust padding for very small screens */
     }
 }
