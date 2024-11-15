@@ -1,7 +1,8 @@
-// Select DOM elements for the board, message display, and keyboard
+// Select DOM elements for the board, message display, keyboard, and mode toggler
 const board = document.getElementById("board");
 const message = document.getElementById("message");
 const keyboard = document.getElementById("keyboard");
+const modeToggler = document.getElementById("mode-toggler"); // Toggler for light/dark mode
 
 // Variables to store the target word, the current attempt count, and the status of each letter
 let targetWord;
@@ -116,24 +117,23 @@ function handleDeleteClick() {
 
 // Check the player's guess against the target word
 function checkGuess() {
-    // Get the current guess from the filled cells in the current row
     const guess = Array.from(document.querySelectorAll(`.row:nth-child(${attempts + 1}) .cell`))
         .map(cell => cell.textContent.toUpperCase()).join("");
 
     if (guess.length !== 5) {
-        alert("Guess must be 5 letters long."); // Ensure the guess is valid
+        alert("Guess must be 5 letters long.");
         return;
     }
-    
+
     const cells = document.querySelectorAll(".cell");
-    const targetWordLetters = targetWord.split(''); // Split the target word into an array of letters
+    const targetWordLetters = targetWord.split('');
 
     // First pass: Check for correct letters in the correct positions
     for (let i = 0; i < 5; i++) {
         const cell = cells[attempts * 5 + i];
         if (guess[i] === targetWord[i]) {
-            cell.classList.add("correct"); // Mark the cell as correct
-            letterStatus[guess[i]] = 'correct'; // Update the letter's status
+            cell.classList.add("correct");
+            letterStatus[guess[i]] = 'correct';
         }
     }
 
@@ -141,23 +141,22 @@ function checkGuess() {
     for (let i = 0; i < 5; i++) {
         const cell = cells[attempts * 5 + i];
         if (guess[i] !== targetWord[i] && targetWordLetters.includes(guess[i])) {
-            cell.classList.add("present"); // Mark the cell as present
-            letterStatus[guess[i]] = 'present'; // Update the letter's status
+            cell.classList.add("present");
+            letterStatus[guess[i]] = 'present';
         } else if (guess[i] !== targetWord[i]) {
-            letterStatus[guess[i]] = 'absent'; // Mark the letter as absent
+            letterStatus[guess[i]] = 'absent';
         }
     }
 
-    updateKeyboard(); // Update the on-screen keyboard with letter statuses
-
-    attempts++; // Increment the number of attempts
+    updateKeyboard();
+    attempts++;
 
     if (guess === targetWord) {
         message.textContent = "Congratulations! You've guessed the word!";
-        displayPlayAgainButton(); // Player wins
+        displayPlayAgainButton();
     } else if (attempts >= 6) {
         message.textContent = "Game Over! The word was " + targetWord;
-        displayPlayAgainButton(); // Player loses
+        displayPlayAgainButton();
     }
 }
 
@@ -165,13 +164,13 @@ function checkGuess() {
 function updateKeyboard() {
     const keys = keyboard.querySelectorAll(".key");
     keys.forEach(key => {
-        const letter = key.getAttribute("data-letter"); // Get the letter for each key
+        const letter = key.getAttribute("data-letter");
         if (letterStatus[letter] === 'correct') {
-            key.classList.add("correct"); // Mark as correct
+            key.classList.add("correct");
         } else if (letterStatus[letter] === 'present') {
-            key.classList.add("present"); // Mark as present
+            key.classList.add("present");
         } else if (letterStatus[letter] === 'absent') {
-            key.classList.add("absent"); // Mark as absent
+            key.classList.add("absent");
         }
     });
 }
@@ -185,5 +184,15 @@ function displayPlayAgainButton() {
     message.appendChild(playAgainButton);
 }
 
-// Start the game  ...
+// Toggle between light and dark modes
+function toggleMode() {
+    document.body.classList.toggle("dark-mode"); // Add or remove dark-mode class
+    const isDarkMode = document.body.classList.contains("dark-mode");
+    modeToggler.textContent = isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode";
+}
+
+// Add event listener for the mode toggler
+modeToggler.addEventListener("click", toggleMode);
+
+// Start the game
 initializeGame();

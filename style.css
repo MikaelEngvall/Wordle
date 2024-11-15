@@ -146,3 +146,41 @@ body {
 .play-again-button:hover {
     background-color: green;
 }
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode .cell {
+    border-color: #444;
+    background-color: #222;
+}
+
+body.dark-mode .key {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode .key.correct {
+    background-color: #1a7d1a;
+}
+
+body.dark-mode .key.present {
+    background-color: #a67f00;
+}
+
+body.dark-mode .key.absent {
+    background-color: #444;
+}
+
+.button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background-color: #777;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
