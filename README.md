@@ -119,7 +119,7 @@ Contributions are welcome! If you'd like to improve the game or report bugs, ple
 
 ## Screenshot
 
-![Game Screenshot](path/to/screenshot.png) <!-- Replace with your screenshot path -->
+![Game Screenshot](https://github.com/user-attachments/assets/c0205d3a-72bd-4854-9112-c9056db6d2fb)
 
 ---
 
