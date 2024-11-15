@@ -103,3 +103,28 @@ Contributions are welcome! If you'd like to improve the game or report bugs, ple
 2. Create a new branch:
    ```bash
    git checkout -b feature-branch-name
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m "Describe your feature here"
+   ```
+4. Push the branch:
+   ```bash
+   git push origin feature-branch-name
+   ```
+5. Open a pull request.
+
+---
+
+## Screenshot
+
+![Game Screenshot](path/to/screenshot.png) <!-- Replace with your screenshot path -->
+
+---
+
+## Acknowledgments
+
+- [Random Word API](https://random-word-api.herokuapp.com/) for providing random 5-letter words.
+- Inspiration from the classic Wordle game.
+
+
