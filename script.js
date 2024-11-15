@@ -73,6 +73,16 @@ function createKeyboard() {
         }
         keyboard.appendChild(rowDiv); // Append the row to the keyboard
     });
+
+    // Add a Delete button
+    const deleteRow = document.createElement("div"); // Row for the delete key
+    deleteRow.classList.add("keyboard-row");
+    const deleteKey = document.createElement("div");
+    deleteKey.classList.add("key", "delete-key"); // Add a special class for styling the delete key
+    deleteKey.textContent = "DEL";
+    deleteKey.addEventListener("click", handleDeleteClick); // Add event listener for delete functionality
+    deleteRow.appendChild(deleteKey);
+    keyboard.appendChild(deleteRow); // Append the delete row to the keyboard
 }
 
 // Handle clicking a key on the on-screen keyboard
@@ -90,6 +100,17 @@ function handleKeyClick(letter) {
     const filledCells = Array.from(currentRow).filter(cell => cell.textContent).length;
     if (filledCells === 5) {
         checkGuess(); // Validate the guess
+    }
+}
+
+// Handle the delete key press
+function handleDeleteClick() {
+    const currentRow = document.querySelectorAll(`.row:nth-child(${attempts + 1}) .cell`);
+    for (let i = currentRow.length - 1; i >= 0; i--) { // Start from the last cell
+        if (currentRow[i].textContent) { // Find the last non-empty cell
+            currentRow[i].textContent = ""; // Clear the cell
+            break; // Exit the loop after deleting one letter
+        }
     }
 }
 
@@ -163,7 +184,6 @@ function displayPlayAgainButton() {
     playAgainButton.addEventListener("click", initializeGame);
     message.appendChild(playAgainButton);
 }
-
 
 // Start the game
 initializeGame();
