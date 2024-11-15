@@ -15,6 +15,7 @@ async function fetchRandomWord() {
 async function initializeGame() {
     targetWord = await fetchRandomWord(); // Fetch the random word
     createBoard(); // Create the game board
+    message.textContent =  targetWord;
     createKeyboard(); // Create the keyboard
 }
 
@@ -25,17 +26,14 @@ function createBoard() {
         for (let j = 0; j < 5; j++) {
             const cell = document.createElement("div");
             cell.classList.add("cell");
-            cell.contentEditable = "true"; // Make the cell editable
-            cell.maxLength = 1; // Limit to one character
             cell.setAttribute("data-row", i);
             cell.setAttribute("data-col", j);
-            cell.addEventListener("input", handleInput);
-            cell.addEventListener("keypress", handleKeyPress);
             row.appendChild(cell);
         }
         board.appendChild(row);
     }
 }
+
 
 function createKeyboard() {
     const qwertyLayout = [
@@ -47,17 +45,40 @@ function createKeyboard() {
     qwertyLayout.forEach((row) => {
         const rowDiv = document.createElement("div");
         rowDiv.classList.add("keyboard-row");
-        
+
         for (let letter of row) {
             const key = document.createElement("div");
             key.classList.add("key");
             key.textContent = letter;
             key.setAttribute("data-letter", letter);
+
+            // Add click event listener
+            key.addEventListener("click", () => {
+                handleKeyClick(letter);
+            });
+
             rowDiv.appendChild(key);
             letterStatus[letter] = ''; // Initialize letter status
         }
         keyboard.appendChild(rowDiv);
     });
+}
+
+function handleKeyClick(letter) {
+    // Find the first empty cell in the current row
+    const currentRow = document.querySelectorAll(`.row:nth-child(${attempts + 1}) .cell`);
+    for (let cell of currentRow) {
+        if (!cell.textContent) {
+            cell.textContent = letter; // Set the clicked letter
+            break;
+        }
+    }
+
+    // If the row is full, automatically check the guess
+    const filledCells = Array.from(currentRow).filter(cell => cell.textContent).length;
+    if (filledCells === 5) {
+        checkGuess();
+    }
 }
 
 
@@ -124,7 +145,7 @@ function checkGuess() {
     updateKeyboard();
 
     attempts++;
-    
+
     if (guess === targetWord) {
         message.textContent = "Congratulations! You've guessed the word!";
     } else if (attempts >= 6) {
