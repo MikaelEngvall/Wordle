@@ -11,7 +11,7 @@ let letterStatus = {}; // Object to track the status of each letter (correct, pr
 
 // Fetch a random 5-letter word from the API
 async function fetchRandomWord() {
-    const response = await fetch('https://random-word-api.herokuapp.com/word?number=1&length=5');
+    const response = await fetch('https://random-word-api.herokuapp.com/word?lang="en"&number=1&length=5');
     const data = await response.json();
     console.log(data[0]); // Log the fetched word (for debugging)
     return data[0].toUpperCase(); // Convert to uppercase for consistency
