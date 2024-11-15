@@ -184,3 +184,20 @@ body.dark-mode .key.absent {
     border-radius: 5px;
     cursor: pointer;
 }
+.language-selector {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.language-flag {
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.language-flag:hover {
+    transform: scale(1.1);
+}

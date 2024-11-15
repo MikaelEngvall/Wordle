@@ -4,6 +4,22 @@ const message = document.getElementById("message");
 const keyboard = document.getElementById("keyboard");
 const modeToggler = document.getElementById("mode-toggler"); // Toggler for light/dark mode
 
+// Select DOM elements for the flags and language selector
+const languageSelector = document.getElementById("language-selector");
+const languageFlags = document.querySelectorAll(".language-flag");
+
+// Default language set to English
+let currentLang = "en"; 
+
+// Event listener to handle flag click
+languageFlags.forEach(flag => {
+    flag.addEventListener("click", () => {
+        currentLang = flag.getAttribute("data-lang");
+        console.log(`Language changed to: ${currentLang}`);
+        initializeGame();  // Restart the game with the new language
+    });
+});
+
 // Variables to store the target word, the current attempt count, and the status of each letter
 let targetWord;
 let attempts = 0;
@@ -11,7 +27,7 @@ let letterStatus = {}; // Object to track the status of each letter (correct, pr
 
 // Fetch a random 5-letter word from the API
 async function fetchRandomWord() {
-    const response = await fetch('https://random-word-api.herokuapp.com/word?lang="en"&number=1&length=5');
+    const response = await fetch(`https://random-word-api.herokuapp.com/word?lang=${currentLang}&number=1&length=5`);
     const data = await response.json();
     console.log(data[0]); // Log the fetched word (for debugging)
     return data[0].toUpperCase(); // Convert to uppercase for consistency
