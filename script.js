@@ -35,7 +35,7 @@ async function fetchRandomWord() {
     const response = await fetch(`https://random-word-api.herokuapp.com/word?lang=${currentLang}&number=1&length=5`);
     const data = await response.json();
     console.log(data[0]); // Log the fetched word (for debugging)
-    return data[0].toUpperCase(); // Convert to uppercase for consistency
+    return removeAccents(data[0].toUpperCase()); // Convert to uppercase for consistency
 }
 
 // Initialize the game by fetching the target word, creating the board, and keyboard
@@ -217,3 +217,22 @@ modeToggler.addEventListener("click", toggleMode);
 
 // Start the game
 initializeGame();
+
+function removeAccents(str) {
+    const accents = {
+        'á': 'a', 'à': 'a', 'ä': 'a', 'â': 'a', 'ã': 'a', 'å': 'a',
+        'é': 'e', 'è': 'e', 'ë': 'e', 'ê': 'e',
+        'í': 'i', 'ì': 'i', 'ï': 'i', 'î': 'i',
+        'ó': 'o', 'ò': 'o', 'ö': 'o', 'ô': 'o', 'õ': 'o',
+        'ú': 'u', 'ù': 'u', 'ü': 'u', 'û': 'u',
+        'ç': 'c', 'ñ': 'n',
+        'Á': 'A', 'À': 'A', 'Ä': 'A', 'Â': 'A', 'Ã': 'A', 'Å': 'A',
+        'É': 'E', 'È': 'E', 'Ë': 'E', 'Ê': 'E',
+        'Í': 'I', 'Ì': 'I', 'Ï': 'I', 'Î': 'I',
+        'Ó': 'O', 'Ò': 'O', 'Ö': 'O', 'Ô': 'O', 'Õ': 'O',
+        'Ú': 'U', 'Ù': 'U', 'Ü': 'U', 'Û': 'U',
+        'Ç': 'C', 'Ñ': 'N'
+    };
+
+    return str.split('').map(char => accents[char] || char).join('');
+}
