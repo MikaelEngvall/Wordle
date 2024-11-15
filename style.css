@@ -136,7 +136,7 @@ body {
     padding: 10px 20px;
     font-size: 18px;
     color: white;
-    background-color: yellow;
+    background-color: green;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -144,7 +144,7 @@ body {
 }
 
 .play-again-button:hover {
-    background-color: green;
+    background-color: yellow;
 }
 body.dark-mode {
     background-color: #121212;
