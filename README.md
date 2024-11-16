@@ -27,6 +27,7 @@ Word Guessing Game Screenshot
 ## Features
 
 - **Dynamic Game Board**: A 6x5 grid dynamically created to support up to 6 guesses for a 5-letter word.
+- **Play in 5 different languages
 - **Virtual Keyboard**: Fully functional on-screen keyboard, including:
   - Letters to input guesses.
   - A **Delete** button to remove incorrect letters.
