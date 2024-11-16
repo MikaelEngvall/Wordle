@@ -118,7 +118,8 @@ Contributions are welcome! If you'd like to improve the game or report bugs, ple
 
 ## Screenshot
 
-![Game Screenshot](https://github.com/user-attachments/assets/c0205d3a-72bd-4854-9112-c9056db6d2fb)
+![Game Screenshot!(https://github.com/user-attachments/assets/60467a2c-3267-4435-a7e8-7d3b06d5b452)
+
 
 ---
 
