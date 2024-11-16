@@ -4,6 +4,8 @@ A fun and interactive Wordle-like game where players have 6 attempts to guess a 
 
 The app features a virtual keyboard, delete functionality, and both light and dark modes for a pleasant user experience.
 
+As well as in 5 laguages.
+
 Word Guessing Game Screenshot 
 
 <img src="https://github.com/MikaelEngvall/Wordle/blob/main/wordle_motus_wortspiel.gif" width="600" height="400" />
