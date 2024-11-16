@@ -1,8 +1,14 @@
 # Word Guessing Game
 
-A fun and interactive Wordle-like game where players have 6 attempts to guess a 5-letter word. The app features a virtual keyboard, delete functionality, and both light and dark modes for a pleasant user experience.
+A fun and interactive Wordle-like game where players have 6 attempts to guess a 5-letter word. 
 
+<<<<<<< HEAD
 ![Word Guessing Game Screenshot](https://github.com/user-attachments/assets/c6a63675-8b1a-4285-8db7-07b1505b4aee)
+=======
+The app features a virtual keyboard, delete functionality, and both light and dark modes for a pleasant user experience.
+
+![Word Guessing Game Screenshot](https://github.com/user-attachments/assets/9f0bb37f-38f9-46b2-8e8d-be65cdf14ece)
+>>>>>>> 2f78ced30021b1de02791797c2396664c17a3d1a
 
 ---
 
@@ -118,7 +124,8 @@ Contributions are welcome! If you'd like to improve the game or report bugs, ple
 
 ## Screenshot
 
-![Game Screenshot](https://github.com/user-attachments/assets/c0205d3a-72bd-4854-9112-c9056db6d2fb)
+![Game Screenshot](https://github.com/user-attachments/assets/60467a2c-3267-4435-a7e8-7d3b06d5b452)
+
 
 ---
 
