@@ -13,6 +13,7 @@ let currentLang = "en";
 // Translation data
 const translations = {
     en: {
+        title: "Wordle",
         playAgain: "Play Again",
         congratulations: "Congratulations! You've guessed the word!",
         gameOver: "Game Over! The word was",
@@ -21,6 +22,7 @@ const translations = {
         lightMode: "Switch to Light Mode",
     },
     it: {
+        title: "Parola",
         playAgain: "Gioca di Nuovo",
         congratulations: "Congratulazioni! Hai indovinato la parola!",
         gameOver: "Partita finita! La parola era",
@@ -29,6 +31,7 @@ const translations = {
         lightMode: "Passa alla Modalità Chiara",
     },
     fr: {
+        title: "Motus",
         playAgain: "Rejouer",
         congratulations: "Félicitations! Vous avez deviné le mot!",
         gameOver: "Partie terminée! Le mot était",
@@ -37,6 +40,7 @@ const translations = {
         lightMode: "Passer en Mode Clair",
     },
     es: {
+        title: "Palabra",
         playAgain: "Jugar de Nuevo",
         congratulations: "¡Felicidades! ¡Has adivinado la palabra!",
         gameOver: "Juego terminado. La palabra era",
@@ -45,6 +49,7 @@ const translations = {
         lightMode: "Cambiar a Modo Claro",
     },
     de: {
+        title: "Wortspiel",
         playAgain: "Nochmal Spielen",
         congratulations: "Herzlichen Glückwunsch! Du hast das Wort erraten!",
         gameOver: "Spiel vorbei! Das Wort war",
@@ -251,7 +256,12 @@ function updateUITranslations() {
     modeToggler.textContent = isDarkMode
         ? translations[currentLang].lightMode
         : translations[currentLang].darkMode;
+
+    // Update the game title (H1) based on the current language
+    const titleElement = document.getElementById("game-title"); // Assuming the H1 element has an ID of 'game-title'
+    titleElement.textContent = translations[currentLang].title;
 }
+
 
 // Toggle between light and dark modes
 function toggleMode() {
