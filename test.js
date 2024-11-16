@@ -9,7 +9,8 @@ const languageSelector = document.getElementById("language-selector");
 const languageFlags = document.querySelectorAll(".language-flag");
 
 // Default language set to English
-let currentLang = "en"; 
+let currentLang = "en";
+
 // Translation data
 const translations = {
     en: {
@@ -53,6 +54,7 @@ const translations = {
         lightMode: "Zum Lichtmodus Wechseln",
     },
 };
+
 // Event listener to handle flag click
 languageFlags.forEach((flag) => {
     flag.addEventListener("click", () => {
@@ -106,8 +108,7 @@ function createBoard() {
         board.appendChild(row); // Append the row to the board
     }
 }
-
-// Create the on-screen keyboard using the QWERTY layout
+/ Create the on-screen keyboard using the QWERTY layout
 function createKeyboard() {
     const qwertyLayout = [
         "QWERTYUIOP",
@@ -149,22 +150,17 @@ function createKeyboard() {
 
 // Handle clicking a key on the on-screen keyboard
 function handleKeyClick(letter) {
-    // Find the first empty cell in the current row
     const currentRow = document.querySelectorAll(`.row:nth-child(${attempts + 1}) .cell`);
     for (let cell of currentRow) {
-        if (!cell.textContent) { // Check if the cell is empty
-            cell.textContent = letter; // Set the clicked letter in the cell
-            break; // Exit the loop after filling one cell
+        if (!cell.textContent) {
+            cell.textContent = letter;
+            break;
         }
     }
 
-    // If the row is fully filled, automatically check the guess
-    const filledCells = Array.from(currentRow).filter(cell => cell.textContent).length;
-    if (filledCells === 5) {
-        checkGuess(); // Validate the guess
-    }
+    const filledCells = Array.from(currentRow).filter((cell) => cell.textContent).length;
+    if (filledCells === 5) checkGuess();
 }
-
 // Handle the delete key press
 function handleDeleteClick() {
     const currentRow = document.querySelectorAll(`.row:nth-child(${attempts + 1}) .cell`);
@@ -179,61 +175,30 @@ function handleDeleteClick() {
 // Check the player's guess against the target word
 function checkGuess() {
     const guess = Array.from(document.querySelectorAll(`.row:nth-child(${attempts + 1}) .cell`))
-        .map(cell => cell.textContent.toUpperCase()).join("");
+        .map((cell) => cell.textContent.toUpperCase())
+        .join("");
 
     if (guess.length !== 5) {
-        alert(translations[currentLang].guessError); // Use translation for the error message
+        alert(translations[currentLang].guessError);
         return;
     }
 
     const cells = document.querySelectorAll(".cell");
-    const targetWordLetters = targetWord.split('');
+    const targetWordLetters = targetWord.split("");
 
-    // First pass: Check for correct letters in the correct positions
     for (let i = 0; i < 5; i++) {
         const cell = cells[attempts * 5 + i];
-        if (guess[i] === targetWord[i]) {
-            cell.classList.add("correct");
-            letterStatus[guess[i]] = 'correct';
-        }
+        if (guess[i] === targetWord[i]) cell.classList.add("correct");
     }
 
-    // Second pass: Check for correct letters in incorrect positions
-    for (let i = 0; i < 5; i++) {
-        const cell = cells[attempts * 5 + i];
-        if (guess[i] !== targetWord[i] && targetWordLetters.includes(guess[i])) {
-            cell.classList.add("present");
-            letterStatus[guess[i]] = 'present';
-        } else if (guess[i] !== targetWord[i]) {
-            letterStatus[guess[i]] = 'absent';
-        }
-    }
-
-    updateKeyboard();
     attempts++;
-
     if (guess === targetWord) {
-        message.textContent = translations[currentLang].congratulations; // Win message
+        message.textContent = translations[currentLang].congratulations;
         displayPlayAgainButton();
     } else if (attempts >= 6) {
-        message.textContent = `${translations[currentLang].gameOver} ${targetWord}`; // Lose message
+        message.textContent = `${translations[currentLang].gameOver} ${targetWord}`;
         displayPlayAgainButton();
     }
-}
-
-// Update the keyboard to reflect the status of each letter
-function updateKeyboard() {
-    const keys = keyboard.querySelectorAll(".key");
-    keys.forEach(key => {
-        const letter = key.getAttribute("data-letter");
-        if (letterStatus[letter] === 'correct') {
-            key.classList.add("correct");
-        } else if (letterStatus[letter] === 'present') {
-            key.classList.add("present");
-        } else if (letterStatus[letter] === 'absent') {
-            key.classList.add("absent");
-        }
-    });
 }
 
 // Display a "Play Again" button
@@ -264,7 +229,6 @@ modeToggler.addEventListener("click", toggleMode);
 
 // Start the game
 initializeGame();
-
 function removeAccents(str) {
     const accents = {
         'á': 'a', 'à': 'a', 'ä': 'a', 'â': 'a', 'ã': 'a', 'å': 'a',
