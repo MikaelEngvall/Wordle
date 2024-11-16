@@ -6,7 +6,7 @@ The app features a virtual keyboard, delete functionality, and both light and da
 
 Word Guessing Game Screenshot 
 
-<img src="https://github.com/MikaelEngvall/Wordle/blob/main/wordle_motus_wortspiel.gif" width="300" height="400" />
+<img src="https://github.com/MikaelEngvall/Wordle/blob/main/wordle_motus_wortspiel.gif" width="600" height="400" />
 
 ---
 
