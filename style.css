@@ -184,7 +184,7 @@ body.dark-mode .key.absent {
     border-radius: 5px;
     cursor: pointer;
 }
-.language-selector {
+#language-selector {
     display: flex;
     justify-content: center;
     gap: 10px;
