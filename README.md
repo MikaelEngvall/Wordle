@@ -2,9 +2,7 @@
 
 A fun and interactive Wordle-like game where players have 6 attempts to guess a 5-letter word. The app features a virtual keyboard, delete functionality, and both light and dark modes for a pleasant user experience.
 
-![Word Guessing Game Screenshot](![image](https://github.com/user-attachments/assets/9f0bb37f-38f9-46b2-8e8d-be65cdf14ece)
-)
- <!-- Replace with the actual path to your screenshot -->
+![Word Guessing Game Screenshot](https://github.com/user-attachments/assets/9f0bb37f-38f9-46b2-8e8d-be65cdf14ece)
 
 ---
 
