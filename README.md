@@ -1,4 +1,4 @@
-# Word Guessing Game
+# Word Guessing Game in 5 different languages
 
 A fun and interactive Wordle-like game where players have 6 attempts to guess a 5-letter word. 
 
