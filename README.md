@@ -1,8 +1,10 @@
-# Word Guessing Game
+# Word Guessing Game in 5 different languages
 
 A fun and interactive Wordle-like game where players have 6 attempts to guess a 5-letter word. 
 
 The app features a virtual keyboard, delete functionality, and both light and dark modes for a pleasant user experience.
+
+As well as in 5 laguages.
 
 Word Guessing Game Screenshot 
 
@@ -25,6 +27,7 @@ Word Guessing Game Screenshot
 ## Features
 
 - **Dynamic Game Board**: A 6x5 grid dynamically created to support up to 6 guesses for a 5-letter word.
+- **Play in 5 different languages
 - **Virtual Keyboard**: Fully functional on-screen keyboard, including:
   - Letters to input guesses.
   - A **Delete** button to remove incorrect letters.
@@ -96,7 +99,7 @@ Ensure you have the following installed:
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/MikaelEngvall/TicTacToe/blob/main/LICENSE) file for details.
 
 ---
 
