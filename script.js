@@ -79,7 +79,7 @@ let letterStatus = {}; // Object to track the status of each letter (correct, pr
 async function fetchRandomWord() {
     const response = await fetch(`https://random-word-api.herokuapp.com/word?lang=${currentLang}&number=1&length=5`);
     const data = await response.json();
-    console.log(data[0]); // Log the fetched word (for debugging)
+    // console.log(data[0]); // Log the fetched word (for debugging)
     return removeAccents(data[0].toUpperCase()); // Convert to uppercase for consistency
 }
 
